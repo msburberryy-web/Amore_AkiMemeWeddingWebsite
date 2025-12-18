@@ -118,19 +118,24 @@ export const generateSchedule = async (startTime: string): Promise<ScheduleItem[
     if (!ai) return [];
 
     const prompt = `
-        Create a standard Japanese wedding schedule starting at ${startTime}.
-        Assume a typical 3.5 hour duration for Ceremony + Reception.
-        Include events like: Ceremony, Reception Start, Toast, Cake Cutting, Letter Reading, Departure.
+        Create a wedding schedule starting at ${startTime} following this specific structure:
+        1. Registration - Starts at ${startTime}
+        2. Grand Entrance - Starts 30 mins after registration
+        3. Toast - Starts 45 mins after registration
+        4. Meal & Conversation - Starts 60 mins after registration
+        5. Photo Session - Starts 90 mins after registration
+        6. Games & Entertainment - Starts 105 mins after registration
+        7. Conclusion & Send-off - Starts 150 mins after registration
         
         Return a JSON array of objects.
         Each object must have:
         - time (HH:MM format, 24h)
         - title (object with en, ja, my translations)
-        - icon (one of: 'ceremony', 'reception', 'party', 'toast')
+        - icon (one of: 'ceremony', 'reception', 'party', 'toast', 'meal', 'camera')
         
-        For 'ja', use standard Japanese wedding terms (e.g., 挙式, 披露宴, 乾杯, ケーキ入刀, 手紙朗読, お披楽喜).
+        For 'ja', use standard Japanese wedding terms (e.g., 受付, 入場, 乾杯, 食事, 写真撮影, 余興, 送賓).
         For 'my', use polite Burmese translations.
-        For 'en', use standard English terms.
+        For 'en', use standard English terms matching the steps above.
     `;
 
     try {
@@ -154,7 +159,7 @@ export const generateSchedule = async (startTime: string): Promise<ScheduleItem[
                                 },
                                 required: ["en", "ja", "my"]
                             },
-                            icon: { type: Type.STRING, enum: ['ceremony', 'reception', 'party', 'toast'] }
+                            icon: { type: Type.STRING, enum: ['ceremony', 'reception', 'party', 'toast', 'meal', 'camera'] }
                         },
                         required: ["time", "title", "icon"]
                     }

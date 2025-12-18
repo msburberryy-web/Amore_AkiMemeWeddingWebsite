@@ -10,7 +10,7 @@ export interface LocalizedString {
 export interface ScheduleItem {
   time: string;
   title: LocalizedString;
-  icon: 'ceremony' | 'reception' | 'party' | 'toast';
+  icon: 'ceremony' | 'reception' | 'party' | 'toast' | 'meal' | 'camera';
 }
 
 export interface FaqItem {
@@ -85,7 +85,7 @@ export const FONT_OPTIONS = {
 };
 
 export const DEFAULT_DATA: WeddingData = {
-  groomName: { en: 'Groom', ja: 'アモーレ', my: 'အမိုး‌ရေး' },
+  groomName: { en: 'Groom', ja: 'アモーレ', my: 'အမိုးရေး' },
   brideName: { en: 'Bride', ja: 'メイ', my: 'မေ' },
   date: '2025-05-10T10:00:00',
   showCountdown: true,
@@ -101,11 +101,16 @@ export const DEFAULT_DATA: WeddingData = {
     my: "ကျွန်ုပ်တို့၏ မင်္ဂလာပွဲသို့ ကြွရောက်ချီးမြှင့်ပါရန် ဖိတ်ကြားအပ်ပါသည်။"
   },
   googleFormUrl: '', 
-  googleScriptUrl: '',
+  googleScriptUrl: 'PASTE_YOUR_GOOGLE_SCRIPT_URL_HERE', 
   showSchedule: true,
   schedule: [
-    { time: '10:00', title: { en: 'Ceremony', ja: '挙式', my: 'မင်္ဂလာအခမ်းအနား' }, icon: 'ceremony' },
-    { time: '11:30', title: { en: 'Reception', ja: '披露宴', my: 'ဧည့်ခံပွဲ' }, icon: 'reception' },
+    { time: '10:30', title: { en: 'Registration', ja: '受付開始', my: 'ဧည့်ခံခြင်း' }, icon: 'reception' },
+    { time: '11:00', title: { en: 'Grand Entrance', ja: '開宴・新郎新婦入場', my: 'မင်္ဂလာဧည့်ခံပွဲ စတင်ခြင်း' }, icon: 'party' },
+    { time: '11:15', title: { en: 'Toast', ja: '乾杯', my: 'မင်္ဂလာစကားပြောကြားခြင်း' }, icon: 'toast' },
+    { time: '11:30', title: { en: 'Meal & Conversation', ja: 'お食事歓談', my: 'ဧည့်ခံကျွေးမွေးခြင်း' }, icon: 'meal' },
+    { time: '12:00', title: { en: 'Photo Session', ja: 'フォトラウンド', my: 'အမှတ်တရဓာတ်ပုံရိုက်ကူးခြင်း' }, icon: 'camera' },
+    { time: '12:15', title: { en: 'Games & Entertainment', ja: '余興・ゲーム', my: 'ဖျော်ဖြေရေး အစီအစဉ်များ' }, icon: 'party' },
+    { time: '13:00', title: { en: 'Conclusion & Send-off', ja: 'お披楽喜・送賓', my: 'ဧည့်ခံပွဲ ပြီးဆုံးခြင်း' }, icon: 'reception' },
   ],
   faq: [
     {
@@ -163,31 +168,31 @@ export const DEFAULT_DATA: WeddingData = {
       icon: 'calendar'
     }
   ],
-  showGallery: true,
-  gallery: [
+  "showGallery": true,
+  "gallery": [
     'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800',
     'https://images.unsplash.com/photo-1511285560982-1351cdeb9821?auto=format&fit=crop&q=80&w=800',
     'https://images.unsplash.com/photo-1520854221256-17451cc330e7?auto=format&fit=crop&q=80&w=800',
     'https://images.unsplash.com/photo-1522673607200-1645062cd495?auto=format&fit=crop&q=80&w=800'
   ],
-  musicUrl: '', // Default empty
-  images: {
-    hero: 'https://picsum.photos/1920/1080?random=1',
-    groom: 'https://picsum.photos/400/500?random=2',
-    bride: 'https://picsum.photos/400/500?random=3',
+  "musicUrl": '', // Default empty
+  "images": {
+    "hero": "https://picsum.photos/1920/1080?random=1",
+    "groom": "https://picsum.photos/400/500?random=2",
+    "bride": "https://picsum.photos/400/500?random=3",
   },
-  theme: {
-    primary: '#C5A059',      
-    text: '#4A4A4A',         
-    backgroundTint: '#F5F0E6' 
+  "theme": {
+    "primary": "#C5A059",      
+    "text": "#4A4A4A",         
+    "backgroundTint": "#F5F0E6" 
   },
-  fonts: {
-    en: '"Cormorant Garamond"',
-    ja: '"Shippori Mincho"',
-    my: '"Padauk"'
+  "fonts": {
+    "en": "\"Cormorant Garamond\"",
+    "ja": "\"Shippori Mincho\"",
+    "my": "\"Padauk\""
   },
-  visuals: {
-    enableAnimations: true,
-    enableEnvelope: true
+  "visuals": {
+    "enableAnimations": true,
+    "enableEnvelope": true
   }
 };

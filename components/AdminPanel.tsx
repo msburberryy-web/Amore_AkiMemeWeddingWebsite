@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { WeddingData, LocalizedString, FONT_OPTIONS, ScheduleItem, FaqItem } from '../types';
 import { X, Sparkles, Save, Loader2, Palette, Database, Image as ImageIcon, Type, Upload, MapPin, Clock, HelpCircle, Trash2, Plus, CalendarClock, Wand2, LogOut, Music, Camera, Code, FileText, Copy, Check, Heart, Settings, AlignLeft, ToggleLeft, MonitorPlay, Download, AlertTriangle, Link, FolderInput } from 'lucide-react';
@@ -90,10 +91,12 @@ const AdminPanel: React.FC<Props> = ({ data, onUpdate, onClose }) => {
       }
   };
 
-  const updateScheduleItem = (index: number, field: 'time' | 'en' | 'ja' | 'my', value: string) => {
+  const updateScheduleItem = (index: number, field: 'time' | 'en' | 'ja' | 'my' | 'icon', value: string) => {
     const newSchedule = [...localData.schedule];
     if (field === 'time') {
       newSchedule[index].time = value;
+    } else if (field === 'icon') {
+        newSchedule[index].icon = value as any;
     } else {
       newSchedule[index].title[field] = value;
     }
@@ -338,9 +341,17 @@ const AdminPanel: React.FC<Props> = ({ data, onUpdate, onClose }) => {
                         {localData.schedule.map((item, idx) => (
                         <div key={idx} className="bg-white p-3 rounded border border-gray-200 relative group">
                             <button onClick={() => removeScheduleItem(idx)} className="absolute top-2 right-2 text-gray-300 hover:text-red-500"><Trash2 size={14} /></button>
-                            <div className="flex gap-2 mb-2">
-                            <input type="time" className="border rounded p-1 text-sm" value={item.time} onChange={e => updateScheduleItem(idx, 'time', e.target.value)} />
-                            <input className="border rounded p-1 text-sm flex-1" placeholder="Event Title (EN)" value={item.title.en} onChange={e => updateScheduleItem(idx, 'en', e.target.value)} />
+                            <div className="flex gap-2 mb-2 items-center">
+                              <input type="time" className="border rounded p-1 text-sm" value={item.time} onChange={e => updateScheduleItem(idx, 'time', e.target.value)} />
+                              <select className="border rounded p-1 text-xs max-w-[80px]" value={item.icon || 'ceremony'} onChange={e => updateScheduleItem(idx, 'icon', e.target.value)}>
+                                  <option value="ceremony">Ring</option>
+                                  <option value="reception">Hall</option>
+                                  <option value="party">Party</option>
+                                  <option value="toast">Cheers</option>
+                                  <option value="meal">Meal</option>
+                                  <option value="camera">Photo</option>
+                              </select>
+                              <input className="border rounded p-1 text-sm flex-1" placeholder="Event Title (EN)" value={item.title.en} onChange={e => updateScheduleItem(idx, 'en', e.target.value)} />
                             </div>
                             <div className="grid grid-cols-2 gap-2">
                             <input className="border rounded p-1 text-xs" placeholder="Japanese" value={item.title.ja} onChange={e => updateScheduleItem(idx, 'ja', e.target.value)} />
