@@ -84,16 +84,16 @@
   ],
   "showGallery": true,
   "gallery": [
-    "../photos/gallery1.jpg",
-    "../photos/cover.jpg",
-    "../photos/groom.jpg",
-    "../photos/bride.jpg"
+    "./photos/gallery1.jpg",
+    "./photos/cover.jpg",
+    "./photos/groom.jpg",
+    "./photos/bride.jpg"
   ],
   "musicUrl": "",
   "images": {
-    "hero": "../photos/cover.jpg",
-    "groom": "../photos/groom.jpg",
-    "bride": "../photos/bride.jpg"
+    "hero": "./photos/cover.jpg",
+    "groom": "./photos/groom.jpg",
+    "bride": "./photos/bride.jpg"
   },
   "theme": {
     "primary": "#C5A059",      
