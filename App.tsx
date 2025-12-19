@@ -50,14 +50,14 @@ const TRANSLATIONS = {
     copyAddr: "住所をコピー"
   },
   my: {
-    saveTheDate: "ရက်စွဲမှတ်သားပါ",
+    saveTheDate: "ရက်စွဲမှတ်ထားပေးပါ",
     invitation: "မင်္ဂလာဖိတ်စာ",
     days: "ရက်", hours: "နာရီ", mins: "မိနစ်", secs: "စက္ကန့်",
     schedule: "အစီအစဉ်",
     access: "တည်နေရာ",
     faq: "မေးခွန်းများ",
-    gallery: "အမှတ်တရ",
-    rsvp: "အကြောင်းပြန်",
+    gallery: "အမှတ်တရများ",
+    rsvp: "အကြောင်းပြန်ရန်",
     rsvpNote: "ကျေးဇူးပြု၍ အောက်ပါပုံစံကိုဖြည့်ပါ",
     presentedBy: "Amore Wedding Tokyo မှ တင်ဆက်သည်",
     addToCal: "ပြက္ခဒိန်တွင်မှတ်သားရန်",
