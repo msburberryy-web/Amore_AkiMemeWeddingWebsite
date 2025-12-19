@@ -84,16 +84,16 @@
   ],
   "showGallery": true,
   "gallery": [
-    "/Amore_AkiMemeWeddingWebsite/public/photos/gallery1.jpg",
-    "/Amore_AkiMemeWeddingWebsite/public/photos/cover.jpg",
-    "/Amore_AkiMemeWeddingWebsite/public/photos/groom.jpg",
-    "/Amore_AkiMemeWeddingWebsite/public/photos/bride.jpg"
+    "photos/gallery1.jpg",
+    "photos/cover.jpg",
+    "photos/groom.jpg",
+    "photos/bride.jpg"
   ],
   "musicUrl": "",
   "images": {
-    "hero": "/Amore_AkiMemeWeddingWebsite/public/photos/cover.jpg",
-    "groom": "/Amore_AkiMemeWeddingWebsite/public/photos/groom.jpg",
-    "bride": "/Amore_AkiMemeWeddingWebsite/public/photos/bride.jpg"
+    "hero": "photos/cover.jpg",
+    "groom": "photos/groom.jpg",
+    "bride": "photos/bride.jpg"
   },
   "theme": {
     "primary": "#C5A059",      
