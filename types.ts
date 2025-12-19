@@ -93,7 +93,7 @@ export const DEFAULT_DATA: WeddingData = {
   location: {
     name: { en: 'Akasaka Area', ja: '赤坂エリア', my: 'Akasaka Area' },
     address: { en: 'Minato City, Tokyo', ja: '東京都港区', my: 'Minato City, Tokyo' },
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.696720719864!2d139.7263913152581!3d35.66012498019906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b770913926d%3A0x2642e31379fa4513!2sGrand%20Hyatt%20Tokyo!5e0!3m2!1sen!2sjp!4v1620000000000!5m2!1sen!2sjp'
+    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.188171022485!2d139.7378566!3d35.6723684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ba8ca2d0af5%3A0xf2758ef7523e5876!2z44Oe44Oq44O844Kw44Op44Oz6LWk5Z2C!5e0!3m2!1sja!2sjp!4v1766155742095!5m2!1sja!2sjp'
   },
   message: {
     en: "We invite you to share in our joy as we exchange marriage vows.",

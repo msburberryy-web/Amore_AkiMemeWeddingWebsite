@@ -77,6 +77,17 @@ const hexToRgb = (hex: string) => {
   return result ? `${parseInt(result[1], 16)} ${parseInt(result[2], 16)} ${parseInt(result[3], 16)}` : '0 0 0';
 };
 
+const ensureEmbedUrl = (url: string): string => {
+  if (!url) return '';
+  if (url.includes('/embed') || url.includes('output=embed')) return url;
+  if (url.includes('<iframe')) {
+      const match = url.match(/src="([^"]+)"/);
+      if (match) return match[1];
+  }
+  const query = encodeURIComponent(url.trim());
+  return `https://maps.google.com/maps?q=${query}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
+};
+
 const App: React.FC = () => {
   const [data, setData] = useState<WeddingData>(DEFAULT_DATA);
   const [lang, setLang] = useState<Language>('en');
@@ -151,7 +162,11 @@ const App: React.FC = () => {
         const merged = { 
           ...DEFAULT_DATA, 
           ...externalData,
-          location: { ...DEFAULT_DATA.location, ...(externalData.location || {}) },
+          location: { 
+            ...DEFAULT_DATA.location, 
+            ...(externalData.location || {}),
+            mapUrl: ensureEmbedUrl(externalData.location?.mapUrl || DEFAULT_DATA.location.mapUrl)
+          },
           images: { ...DEFAULT_DATA.images, ...(externalData.images || {}) },
           theme: { ...DEFAULT_DATA.theme, ...(externalData.theme || {}) },
           fonts: { ...DEFAULT_DATA.fonts, ...(externalData.fonts || {}) },
