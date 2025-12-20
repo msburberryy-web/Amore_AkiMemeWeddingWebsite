@@ -1,4 +1,4 @@
-# Amore Wedding Tokyo Invitation
+# Amoré Wedding Tokyo Invitation
 
 A premium, customizable wedding invitation single-page application built with React and Tailwind CSS.
 

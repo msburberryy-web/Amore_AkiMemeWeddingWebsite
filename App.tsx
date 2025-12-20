@@ -25,7 +25,7 @@ const TRANSLATIONS = {
     gallery: "Gallery",
     rsvp: "RSVP",
     rsvpNote: "Please respond by filling out the form below.",
-    presentedBy: "Presented by Amore Wedding Tokyo",
+    presentedBy: "Presented by Amoré Wedding Tokyo",
     addToCal: "Add to Calendar",
     googleCal: "Google Calendar",
     appleCal: "Apple / Outlook",
@@ -42,7 +42,7 @@ const TRANSLATIONS = {
     gallery: "写真",
     rsvp: "出欠",
     rsvpNote: "以下のフォームよりご回答をお願いいたします。",
-    presentedBy: "Presented by Amore Wedding Tokyo",
+    presentedBy: "Presented by Amoré Wedding Tokyo",
     addToCal: "カレンダーに追加",
     googleCal: "Googleカレンダー",
     appleCal: "Apple / Outlook",
@@ -59,7 +59,7 @@ const TRANSLATIONS = {
     gallery: "အမှတ်တရများ",
     rsvp: "အကြောင်းပြန်ရန်",
     rsvpNote: "ကျေးဇူးပြု၍ အောက်ပါပုံစံကိုဖြည့်ပါ",
-    presentedBy: "Amore Wedding Tokyo မှ တင်ဆက်သည်",
+    presentedBy: "Amoré Wedding Tokyo မှ တင်ဆက်သည်",
     addToCal: "ပြက္ခဒိန်တွင်မှတ်သားရန်",
     googleCal: "Google Calendar",
     appleCal: "Apple / Outlook",
@@ -516,7 +516,7 @@ const App: React.FC = () => {
 
           <footer className="bg-[#f5f5f5] pt-16 pb-32 text-center text-gray-500">
             <div className="max-w-md mx-auto flex flex-col items-center">
-              <p className="font-serif italic text-xl mb-4 text-wedding-gold">Amore Wedding Tokyo</p>
+              <p className="font-serif italic text-xl mb-4 text-wedding-gold">Amoré Wedding Tokyo</p>
               <p className="text-[10px] uppercase tracking-widest opacity-60">{t.presentedBy}</p>
             </div>
           </footer>
